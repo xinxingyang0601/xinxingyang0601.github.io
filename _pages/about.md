@@ -6,12 +6,12 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I am a Postdoctoral Research Fellow at OHSU. My research focuses on computational biology, computational omics, and computational pathology, with an emphasis on developing robust and interpretable methods for biomedical data analysis.
+I am Xinxing Yang, currently a Postdoctoral Research Fellow at OHSU. I received my Ph.D. from Shanghai Jiao Tong University. My research interests include computational omics, computational pathology, and large language models (LLMs).
 
 My research interests include:
 
-- Computational biology
 - Computational omics
 - Computational pathology
+- Large language models (LLMs)
 
 If you would like to collaborate, please reach out by email.
