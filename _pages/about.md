@@ -6,14 +6,12 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I am a researcher focused on [your main research theme]. My work bridges [topic A] and [topic B], with an emphasis on [method or impact].
-
-I am currently [your title] at [your institution/department], where I collaborate with [lab/group]. I received my [degree] from [university], supervised by [advisor].
+I am a Postdoctoral Research Fellow at OHSU. My research focuses on computational biology, computational omics, and computational pathology, with an emphasis on developing robust and interpretable methods for biomedical data analysis.
 
 My research interests include:
 
-- [Interest 1]
-- [Interest 2]
-- [Interest 3]
+- Computational biology
+- Computational omics
+- Computational pathology
 
 If you would like to collaborate, please reach out by email.
