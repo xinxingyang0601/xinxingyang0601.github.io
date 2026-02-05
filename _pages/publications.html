@@ -12,13 +12,42 @@ author_profile: true
 {% include base_path %}
 
 <!-- New style rendering if publication categories are defined -->
-{% assign pubs_by_year = site.publications | sort: 'date' | reverse | group_by_exp: 'post', 'post.date | date: "%Y"' %}
-{% for year in pubs_by_year %}
+{% assign sorted_pubs = site.publications | sort: 'date' | reverse %}
+{% assign recent_pubs = sorted_pubs | where_exp: 'post', 'post.date | date: "%Y" | plus: 0 >= 2024' %}
+{% assign older_pubs = sorted_pubs | where_exp: 'post', 'post.date | date: "%Y" | plus: 0 <= 2023' %}
+
+{% assign recent_by_year = recent_pubs | group_by_exp: 'post', 'post.date | date: "%Y"' %}
+{% for year in recent_by_year %}
   <h2>{{ year.name }}</h2>
   <hr />
-  {% for post in year.items %}
-    {% include archive-single.html %}
-  {% endfor %}
+  <ol>
+    {% for post in year.items %}
+      <li>
+        <strong>{{ post.title }}</strong><br />
+        {% if post.citation %}
+          {{ post.citation }}
+        {% else %}
+          {{ post.venue }}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ol>
 {% endfor %}
 
+{% if older_pubs.size > 0 %}
+  <h2>2023 and earlier</h2>
+  <hr />
+  <ol>
+    {% for post in older_pubs %}
+      <li>
+        <strong>{{ post.title }}</strong><br />
+        {% if post.citation %}
+          {{ post.citation }}
+        {% else %}
+          {{ post.venue }}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ol>
+{% endif %}
 
